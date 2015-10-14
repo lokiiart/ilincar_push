@@ -50,9 +50,11 @@ $rs = $sdk -> pushMsgToSingleDevice($channelId, $message, $opts);
 if($rs === false){
    print_r($sdk->getLastErrorCode());
    print_r($sdk->getLastErrorMsg());
+      echo"<script>alert('推送失败');history.go(-1);</script>script>";
 }else{
     // 将打印出消息的id,发送时间等相关信息.
     print_r($rs);
+      echo"<script>alert('推送成功');history.go(-1);</script>script>";
 }
 
 echo "done!";
