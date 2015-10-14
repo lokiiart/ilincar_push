@@ -22,6 +22,7 @@ $config_version=$_REQUEST['config_version'];
 $current_version=$_REQUEST['current_version'];
 $version_description=$_REQUEST['version_description'];
 $download_url=$_REQUEST['download_url'];
+$name = $_REQUEST['name'];
 
 
 // 创建SDK对象.
@@ -34,7 +35,8 @@ $message = array (
     'config_version'=>$config_version,
     'current_version'=>$current_version,
     'version_description'=>$version_description,
-    'download_url'=>$download_url
+    'download_url'=>$download_url,
+    'name' => $name
 );
 var_dump($message);
 
