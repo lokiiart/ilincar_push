@@ -16,7 +16,7 @@
  *
  */
 
-require_once '../sdk.php';
+require_once '../xiaolingsdk.php';
 
 $config_version=$_REQUEST['config_version'];
 $current_version=$_REQUEST['current_version'];
@@ -27,7 +27,7 @@ $download_url=$_REQUEST['download_url'];
 // 创建SDK对象.
 $sdk = new PushSDK();
 
-$channelId = '4605967582357488876';
+$channelId = '3874497173868345435';
 
 // message content.
 $message = array (
@@ -36,6 +36,7 @@ $message = array (
     'version_description'=>$version_description,
     'download_url'=>$download_url
 );
+
 var_dump($message);
 
 // 设置消息类型为 通知类型.
@@ -44,7 +45,7 @@ $opts = array (
 );
 
 // 向目标设备发送一条消息
-$rs = $sdk -> pushMsgToSingleDevice($channelId, $message, $opts);
+$rs = $sdk -> pushMsgToSingleDevice($channelId,$message, $opts);
 
 // 判断返回值,当发送失败时, $rs的结果为false, 可以通过getError来获得错误信息.
 if($rs === false){
